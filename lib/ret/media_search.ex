@@ -320,13 +320,13 @@ defmodule Ret.MediaSearch do
           :error
 
         res ->
-          IO.put("Tenor API query was successful")
+          IO.puts("Tenor API query was successful")
           decoded_res = res |> Map.get(:body) |> Poison.decode!()
-          IO.put("Decode successful")
+          IO.puts("Decode successful")
           next_cursor = decoded_res |> Map.get("next")
-          IO.put("next successful")
+          IO.puts("next successful")
           entries = decoded_res |> Map.get("results") |> Enum.map(&tenor_api_result_to_entry/1)
-          IO.put("entries successful")
+          IO.puts("entries successful")
 
           {:commit,
            %Ret.MediaSearchResult{
