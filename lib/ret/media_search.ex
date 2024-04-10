@@ -306,6 +306,8 @@ defmodule Ret.MediaSearch do
           key: api_key
         )
 
+      IO.puts("Query: #{query}")
+
       res =
         if filter == "trending" do
           "https://api.tenor.com/v1/trending?#{query}"
