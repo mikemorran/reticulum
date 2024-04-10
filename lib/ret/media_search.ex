@@ -316,6 +316,7 @@ defmodule Ret.MediaSearch do
 
       case res do
         :error ->
+          IO.puts("Error bad tenor query or API key issue")
           :error
 
         res ->
@@ -330,7 +331,9 @@ defmodule Ret.MediaSearch do
            }}
       end
     else
-      _ -> nil
+      _ -> 
+        IO.puts("Error with tenor api key")
+        nil
     end
   end
 
