@@ -308,9 +308,9 @@ defmodule Ret.MediaSearch do
 
       res =
         if filter == "trending" do
-          "https://api.tenor.com/v1/trending?#{query}"
+          "https://tenor.googleapis.com/v2/trending_terms?#{query}"
         else
-          "https://api.tenor.com/v1/search?#{query}"
+          "https://tenor.googleapis.com/v2/search?#{query}"
         end
         |> retry_get_until_success()
 
